@@ -1,0 +1,96 @@
+<!-- 1. Retrieve all patients
+Create a GET endpoint that retrieves all patients and displays their:
+
+patient_id
+first_name
+last_name
+date_of_birth -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+        <tr>
+            <td> <%= row.patient_id %> </td>
+            <td> <%=  row.first_name %> </td>
+            <td> <%=  row.last_name %> </td>
+            <td> <%=  row.date_of_birth %> </td>
+        </tr>
+       <%});%>
+    </tbody>
+</table>
+
+<br>
+
+<!-- 2. Retrieve all providers
+Create a GET endpoint that displays all providers with their:
+
+first_name
+last_name
+provider_specialty -->
+
+<!-- <table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Provider Specialty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+        <tr>
+            <td> <%=  row.first_name %> </td>
+            <td> <%=  row.last_name %> </td>
+            <td> <%=  row.provider_specialty %> </td>
+        </tr>
+       <%});%>
+    </tbody>
+</table> -->
+
+<br>
+
+<!-- 3. Filter patients by First Name
+Create a GET endpoint that retrieves all patients by their first name -->
+
+<!-- <table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+        <tr>
+            <td> <%=  row.first_name %> </td>
+        </tr>
+       <%});%>
+    </tbody>
+</table>
+
+<br> -->
+
+<!-- 4. Retrieve all providers by their specialty
+Create a GET endpoint that retrieves all providers by their specialty -->
+
+ <!-- <table>
+    <thead>
+        <tr>
+            <th>Provider Specialty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+        <tr>
+            <td> <%=  row.provider_specialty %> </td>
+        </tr>
+       <%});%>
+    </tbody>
+</table> -->
