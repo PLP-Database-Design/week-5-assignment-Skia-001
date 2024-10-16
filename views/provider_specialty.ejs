@@ -1,0 +1,17 @@
+<!-- 4. Retrieve all providers by their specialty
+Create a GET endpoint that retrieves all providers by their specialty -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Provider Specialty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+        <tr>
+            <td> <%=  row.provider_specialty %> </td>
+        </tr>
+       <%});%>
+    </tbody>
+</table>
