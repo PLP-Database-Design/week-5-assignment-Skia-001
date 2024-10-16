@@ -39,7 +39,7 @@ app.set('views', __dirname + '/views');
 
 // Data.ejs file is in views folder
 
-app.get('/data', (req,res) => {
+app.get('/patients', (req,res) => {
 
     // 1. Retrieve all patients
     db.query('SELECT * FROM patients', (err, results) =>{
@@ -51,40 +51,50 @@ app.get('/data', (req,res) => {
             res.render('data', {results: results});
         }
     });
+});
 
-    // 2. Retrieve all providers
-    // db.query('SELECT * FROM providers', (err, results) =>{
-    //     if (err){
-    //         console.error(err);
-    //         res.status(500).send('Error Retrieving Data')
-    //     }else {
-    //         //Dispaly the records to the browser
-    //         res.render('data', {results: results});
-    //     }
-    // });
+// 2. Retrieve all providers
+app.get('/providers', (req,res) => {
 
-    // 3. Filter patients by First Name
-    // db.query('SELECT * FROM patients', (err, results) =>{
-    //     if (err){
-    //         console.error(err);
-    //         res.status(500).send('Error Retrieving Data')
-    //     }else {
-    //         //Dispaly the records to the browser
-    //         res.render('data', {results: results});
-    //     }
-    // });
- 
-    // 4. Retrieve all providers by their specialty
-    // Create a GET endpoint that retrieves all providers by their specialty
-    // db.query('SELECT * FROM providers', (err, results) =>{
-    //         if (err){
-    //             console.error(err);
-    //             res.status(500).send('Error Retrieving Data')
-    //         }else {
-    //             //Dispaly the records to the browser
-    //             res.render('data', {results: results});
-    //         }
-    //     });
+    db.query('SELECT * FROM providers', (err, results) =>{
+        if (err){
+            console.error(err);
+            res.status(500).send('Error Retrieving Data')
+        }else {
+            //Dispaly the records to the browser
+            res.render('provider', {results: results});
+        }
+    });
+});
+
+// 3. Filter patients by First Name
+app.get('/patients/first_name', (req,res) => {
+
+    db.query('SELECT * FROM patients', (err, results) =>{
+        if (err){
+            console.error(err);
+            res.status(500).send('Error Retrieving Data')
+        }else {
+            //Dispaly the records to the browser
+            res.render('patients', {results: results});
+        }
+    });
+
+});
+
+// 4. Retrieve all providers by their specialty
+app.get('/providers_specialty', (req,res) => {
+    
+    db.query('SELECT * FROM providers', (err, results) =>{
+            if (err){
+                console.error(err);
+                res.status(500).send('Error Retrieving Data')
+            }else {
+                //Dispaly the records to the browser
+                res.render('provider_specialty', {results: results});
+            }
+        });
+
 
 });
 
